@@ -1,0 +1,740 @@
+/* ==========================================================
+   STYLE.CSS
+   Yleiset tyylit koko sivustolle
+   Header ja Footer omissa tiedostoissaan.
+   ========================================================== */
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================
+   DESIGN TOKENS
+   ========================================================== */
+
+:root {
+  --color-primary: #073b1f;
+  --color-primary-light: #0a4d29;
+
+  --color-text: #2d3b32;
+  --color-text-light: #5b675f;
+
+  --color-background: #ffffff;
+  --color-surface: #f7f8f7;
+
+  --color-border: #e3e8e4;
+
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Lora", serif;
+
+  --max-width: 1160px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius: 4px;
+
+  --shadow-soft: 0 8px 24px rgba(7, 59, 31, 0.08);
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+   ========================================================== */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: var(--color-text);
+  background: var(--color-background);
+}
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ==========================================================
+   BUTTONS
+
+   <a href="#" class="btn btn-primary">
+       Lue lisää
+   </a>
+   ========================================================== */
+
+.btn {
+  display: inline-block;
+
+  padding: 0.85rem 1.5rem;
+
+  border: none;
+  border-radius: var(--radius);
+
+  font-family: var(--font-heading);
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+}
+
+/* ==========================================================
+   CARD GRID
+
+   <div class="card-grid">
+       ...
+   </div>
+   ========================================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+/* ==========================================================
+   TEEMAKORTTI
+
+   <article class="teema-card">
+       <div class="teema-icon">
+           SVG
+       </div>
+
+       <h3>Otsikko</h3>
+
+       <p>Kuvausteksti</p>
+   </article>
+   ========================================================== */
+
+.teema-card {
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+
+  border-radius: var(--radius);
+
+  padding: 1.75rem 1.5rem;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.teema-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.teema-icon {
+  margin-bottom: 1rem;
+}
+
+.teema-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.teema-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.teema-card p {
+  margin-bottom: 0;
+}
+
+/* ==========================================================
+   AJANKOHTAISKORTIT / BLOGILISTAUS
+
+   <div class="ajank-grid">
+
+       <article class="ajank-card">
+
+           <p class="ajank-date">
+               17. kesäkuuta 2026
+           </p>
+
+           <h3>Otsikko</h3>
+
+           <p>
+               Lyhyt kuvausteksti
+           </p>
+
+           <a href="#" class="ajank-link">
+               Lue lisää →
+           </a>
+
+       </article>
+
+   </div>
+   ========================================================== */
+
+.ajank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.ajank-card {
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+
+  background: var(--color-background);
+
+  transition: border-color 0.18s ease;
+}
+
+.ajank-card:hover {
+  border-color: var(--color-primary);
+}
+
+.ajank-date {
+  font-family: var(--font-heading);
+
+  font-size: 0.8rem;
+  font-weight: 300;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: var(--color-text-light);
+
+  margin-bottom: 0.75rem;
+}
+
+.ajank-link {
+  display: inline-block;
+
+  margin-top: 1rem;
+
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--color-primary);
+
+  border-bottom: 1px solid var(--color-primary);
+
+  transition: opacity 0.15s ease;
+}
+
+.ajank-link:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================================
+   KIRJOITUSLISTA
+
+   <div class="writing-list">
+
+       <a href="kirjoituksia/20260813-esimerkki.html"
+          class="writing-item">
+
+           <span class="writing-date">
+               13.08.2026
+           </span>
+
+           <span class="writing-title">
+               Kirjoituksen otsikko
+           </span>
+
+           <span class="writing-arrow">
+               →
+           </span>
+
+       </a>
+
+   </div>
+   ========================================================== */
+
+.writing-list {
+  max-width: 900px;
+  margin: 1.75rem auto 0;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.writing-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+
+  gap: 1.25rem;
+
+  padding: 0.65rem 0;
+
+  border-bottom: 1px solid var(--color-border);
+
+  transition:
+    color 0.18s ease,
+    padding-left 0.18s ease;
+}
+
+.writing-date {
+  font-family: var(--font-heading);
+
+  font-size: 0.8rem;
+  font-weight: 400;
+
+  color: var(--color-text-light);
+
+  white-space: nowrap;
+}
+
+.writing-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: var(--color-text);
+
+  transition: color 0.18s ease;
+}
+
+.writing-arrow {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+
+  color: var(--color-primary);
+
+  transition: transform 0.18s ease;
+}
+
+.writing-item:hover {
+  padding-left: 0.35rem;
+}
+
+.writing-item:hover .writing-title {
+  color: var(--color-primary);
+}
+
+.writing-item:hover .writing-arrow {
+  transform: translateX(4px);
+}
+.post-source {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.post-source a {
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  transition: opacity 0.15s ease;
+}
+
+.post-source a:hover {
+  opacity: 0.7;
+}
+
+blockquote {
+  border-left: 3px solid var(--color-primary);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+blockquote p {
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+.back-to-writings {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  transition: opacity 0.15s ease;
+}
+
+.back-to-writings:hover {
+  opacity: 0.7;
+}
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 640px) {
+  .writing-item {
+    grid-template-columns: 90px 1fr auto;
+
+    gap: 0.75rem;
+
+    padding: 0.6rem 0;
+  }
+
+  .writing-date {
+    font-size: 0.75rem;
+  }
+
+  .writing-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================
+   BLOGIARTIKKELI
+
+   <article class="blog-post">
+
+    <h1>Otsikko</h1>
+
+    <p class="post-meta">
+        17. kesäkuuta 2026
+    </p>
+
+    <p>
+        Varsinainen blogiteksti...
+    </p>
+
+    <a href="../kirjoituksia.html" class="back-to-writings">
+        ← Palaa takaisin
+    </a>
+
+</article>
+   ========================================================== */
+
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-meta {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   JUHANI-SIVU HERO
+   ========================================================== */
+
+.juhani-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: url('/images/hero/juhanibanneri.webp')
+    center center / 100% 100% no-repeat;
+
+  min-height: 36.46vw;
+}
+
+/* Vihreä overlay 70% */
+.juhani-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 59, 31, 0.40);
+  z-index: 1;
+}
+
+.juhani-hero-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  padding: var(--space-lg) var(--container-padding);
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.juhani-hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+/* Sukunimi piiloutuu kapeimmalla mobiililla */
+.juhani-hero-surname {
+  display: inline;
+}
+
+.juhani-hero-desc {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 0;
+}
+
+/* ── MOBIILI: leipäteksti piiloon ── */
+@media (max-width: 600px) {
+  .juhani-hero-desc {
+    display: none;
+  }
+}
+
+/* ── MOBIILI: sukunimi piiloon ── */
+@media (max-width: 400px) {
+  .juhani-hero-surname {
+    display: none;
+  }
+
+  .juhani-hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+}
+
+/* ── MOBIILI ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .juhani-hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+}
+/* ==========================================================
+   TEEMA-KORTIT – politiikka.html
+   ========================================================== */
+
+.teemat-osio {
+  padding: var(--space-xl) 0;
+}
+
+.teema-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── KORTTI PERUSRAKENNE ──────────────────────────────────── */
+.teema-split-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.18s ease;
+}
+
+.teema-split-card:hover {
+  box-shadow: 0 12px 32px rgba(7, 59, 31, 0.12);
+}
+
+/* Joka toinen kortti: kuva oikealle */
+.teema-split-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ── KUVAPUOLI ────────────────────────────────────────────── */
+.teema-split-img {
+  flex: 0 0 40%;       /* kuva vie aina 40% leveydestä */
+  align-self: stretch; /* venyttää kuvan kortin korkuiseksi */
+  overflow: hidden;
+}
+
+.teema-split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── TEKSTIPUOLI ──────────────────────────────────────────── */
+.teema-split-content {
+  flex: 1;
+  padding: var(--space-lg);
+  background: var(--color-background);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-sm);
+}
+
+.teema-split-content h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--color-primary);
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.teema-split-content p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ── MOBIILI: kuva aina ylös, teksti alas ─────────────────── */
+@media (max-width: 600px) {
+
+  .teema-split-card,
+  .teema-split-card:nth-child(even) {
+    flex-direction: column !important;
+  }
+
+  .teema-split-img {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 220px;     /* kiinteä korkeus mobiilissa */
+  }
+
+  .teema-split-content {
+    padding: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teema-split-card {
+    transition: none;
+  }
+}
