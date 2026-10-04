@@ -552,7 +552,7 @@ blockquote p {
   width: 100%;
   overflow: hidden;
 
-  background: url('images/hero/juhanibanneri.webp')
+  background: url('../images/hero/juhanibanneri.webp')
     center center / 100% 100% no-repeat;
 
   min-height: 36.46vw;
