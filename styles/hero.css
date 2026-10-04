@@ -1,10 +1,7 @@
 /* ==========================================================
    HERO.CSS
-   Vaatii: style.css (design tokens ja fontit)
-   Kuvat:
-     Desktop-tausta: ../images/hero/hero1tausta.webp (1920x700px)
-     Mobiili-tausta: ../images/hero/hero1taustapysty.webp (600x900px)
-     Kasvokuva:      ../images/hero/juhanisillanpaa400x400.webp
+   Kuvat suhteessa tähän tiedostoon:
+   styles/hero.css
    ========================================================== */
 
 
@@ -16,96 +13,128 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 0;
+  margin: 0;
   padding: 0;
 }
 
 .hero-slide {
-  display: none; /* JS näyttää satunnaisesti yhden */
+  display: none;
   position: relative;
   width: 100%;
+  min-height: 36.46vw;
+
+  background-image: url("../images/hero/hero1tausta.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
 /* ==========================================================
-   YHTEINEN POHJA: DESKTOP (yli 600px)
+   HERO SISÄLTÖ
    ========================================================== */
 
-#hero1,
-#hero2 {
-  background: url('../images/hero/hero1tausta.webp')
-    center center / 100% 100% no-repeat;
-  min-height: 36.46vw;
-}
-
 .hero-inner {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  z-index: 1;
+
   max-width: var(--max-width);
+  min-height: 36.46vw;
+
   margin: 0 auto;
-  width: 100%;
   padding: var(--space-lg) var(--container-padding);
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
   gap: var(--space-lg);
 }
 
-/* Vasen puoli */
+
+/* ==========================================================
+   VASEN PUOLI
+   ========================================================== */
+
 .hero-left {
   flex: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   gap: var(--space-sm);
 }
 
-/* Oikea puoli */
+
+/* ==========================================================
+   OIKEA PUOLI
+   ========================================================== */
+
 .hero-right {
   flex-shrink: 0;
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-/* Kasvokuva */
+
+/* ==========================================================
+   KASVOKUVA
+   ========================================================== */
+
 .hero-portrait {
   width: clamp(120px, 22vw, 320px);
   height: clamp(120px, 22vw, 320px);
+
   object-fit: cover;
   border-radius: 50%;
+
   box-shadow: 0 0 0 2px #ffffff;
 }
 
-/* Logo */
+
+/* ==========================================================
+   KESKUSTA-LOGO
+   ========================================================== */
+
 .hero-logo {
   height: clamp(48px, 6vw, 60px);
   width: auto;
+
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
 
-/* Nuolisymboli */
+
+/* ==========================================================
+   EDISTYSNUOLI
+   ========================================================== */
+
 .hero-arrow {
   height: clamp(28px, 3.5vw, 48px);
   width: auto;
+
   filter: brightness(0) invert(1);
   opacity: 0.85;
 }
 
 
 /* ==========================================================
-   HERO 1 – omat tekstit
+   HERO 1
    ========================================================== */
 
 #hero1 .hero-name {
   font-family: var(--font-heading);
   font-weight: 600;
+
   font-size: clamp(1.25rem, 3vw, 2.75rem);
+
   color: #ffffff;
   line-height: 1.15;
+
   margin-bottom: 0;
   text-align: left;
 }
@@ -113,15 +142,19 @@
 #hero1 .hero-title {
   font-family: var(--font-heading);
   font-weight: 300;
+
   font-size: clamp(0.65rem, 1.2vw, 1rem);
+
   color: rgba(255, 255, 255, 0.8);
+
   line-height: 1.5;
+
   margin-bottom: 0;
 }
 
 
 /* ==========================================================
-   HERO 2 – omat tekstit
+   HERO 2
    ========================================================== */
 
 #hero2 .hero-left {
@@ -140,48 +173,73 @@
 #hero2 .hero-slogan {
   font-family: var(--font-heading);
   font-weight: 600;
+
   font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+
   color: #ffffff;
+
   line-height: 1.1;
+
   margin-bottom: 0;
-  text-align: left;
+
+  text-align: center;
 }
 
 
 /* ==========================================================
-   MOBIILI (alle 600px)
+   MOBIILI
    ========================================================== */
 
 @media (max-width: 600px) {
 
-  #hero1,
-  #hero2 {
-    background: url('../images/hero/hero1taustapysty.webp')
-      center center / 100% 100% no-repeat;
-    padding-bottom: 150%;
+  .hero-slide {
+    min-height: 0;
+
+    background-image: url("../images/hero/hero1taustapysty.webp");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .hero-inner {
+    min-height: 150vw;
+
     flex-direction: column;
+
     justify-content: center;
+
     gap: var(--space-md);
+
     padding: var(--space-md) var(--container-padding);
   }
+
+
+  /* Molemmat puolet täyteen leveyteen */
 
   .hero-left,
   .hero-right {
     width: 100%;
+
     justify-content: center;
     align-items: center;
+
     text-align: center;
   }
+
+
+  /* Kasvokuva */
 
   .hero-portrait {
     width: clamp(100px, 40vw, 180px);
     height: clamp(100px, 40vw, 180px);
   }
 
-  /* Hero 1 mobiili: kuva ylös, teksti alas */
+
+  /* Hero 1:
+     kuva ensin
+     teksti sen jälkeen
+  */
+
   #hero1 .hero-right {
     order: -1;
   }
@@ -190,7 +248,12 @@
     order: 1;
   }
 
-  /* Hero 2 mobiili: teksti ylös, kuva alas */
+
+  /* Hero 2:
+     teksti ensin
+     kuva sen jälkeen
+  */
+
   #hero2 .hero-left {
     order: -1;
     align-items: center;
@@ -200,7 +263,9 @@
     order: 1;
   }
 
-  /* Tekstit mobiilissa */
+
+  /* Hero 1 tekstit */
+
   #hero1 .hero-name {
     font-size: clamp(1.2rem, 6vw, 1.75rem);
     text-align: center;
@@ -210,6 +275,9 @@
     font-size: clamp(0.7rem, 3vw, 0.9rem);
     text-align: center;
   }
+
+
+  /* Hero 2 tekstit */
 
   #hero2 .hero-slogan {
     font-size: clamp(1.3rem, 6vw, 2rem);
@@ -221,42 +289,6 @@
     align-self: center;
   }
 }
-
-
-/* ==========================================================
-   HERO 3 (tuleva – kopioi nämä lohkot)
-   ========================================================== */
-
-/*
-#hero3 {
-  background: url('../images/hero/hero1tausta.webp')
-    center center / 100% 100% no-repeat;
-  padding-bottom: 36.46%;
-}
-
-#hero3 .hero-otsikko {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: clamp(1.5rem, 3.5vw, 3.5rem);
-  color: #ffffff;
-}
-
-@media (max-width: 600px) {
-  #hero3 {
-    background: url('../images/hero/hero1taustapysty.webp')
-      center center / 100% 100% no-repeat;
-    padding-bottom: 150%;
-  }
-
-  #hero3 .hero-left {
-    order: ?;
-  }
-
-  #hero3 .hero-right {
-    order: ?;
-  }
-}
-*/
 
 
 /* ==========================================================
