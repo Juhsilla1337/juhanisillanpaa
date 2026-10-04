@@ -12,9 +12,9 @@ async function loadComponent(selector, file) {
 }
 
 async function initComponents() {
- await loadComponent('#header-placeholder', '/components/header.html');
-await loadComponent('#hero-placeholder',   '/components/hero.html');
-await loadComponent('#footer-placeholder', '/components/footer.html');
+await loadComponent('#header-placeholder', 'components/header.html');
+await loadComponent('#hero-placeholder',   'components/hero.html');
+await loadComponent('#footer-placeholder', 'components/footer.html');
   initNav();
   initHero();
   initYear();
