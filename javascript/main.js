@@ -3,11 +3,35 @@
 // Juhani Sillanpää
 // ==========================================================
 
+
 // ==========================================================
 // SIVUSTON JUURI
 // ==========================================================
 
-const BASE_PATH = "/juhanisillanpaa/";
+// Selvitetään automaattisesti sivuston juurikansio.
+//
+// GitHub Pages:
+// https://juhsilla1337.github.io/juhanisillanpaa/
+//
+// Live Preview:
+// http://127.0.0.1:3000/
+//
+// Oma domain:
+// https://juhanisillanpaa.fi/
+//
+// Näin sama JavaScript toimii kaikissa ympäristöissä.
+
+const SITE_ROOT = (() => {
+  const path = window.location.pathname;
+
+  // Jos ollaan GitHub Pagesissa /juhanisillanpaa/
+  if (path.includes("/juhanisillanpaa/")) {
+    return "/juhanisillanpaa/";
+  }
+
+  // Live Preview / oma domain
+  return "/";
+})();
 
 
 // ==========================================================
@@ -20,7 +44,7 @@ async function loadComponent(selector, file) {
   if (!el) return;
 
   try {
-    const url = BASE_PATH + file;
+    const url = SITE_ROOT + file;
 
     const res = await fetch(url);
 
@@ -32,11 +56,49 @@ async function loadComponent(selector, file) {
 
     el.innerHTML = html;
 
+    // Muutetaan komponentin suhteelliset polut
+    // toimimaan sekä Live Previewssa että GitHub Pagesissa.
+
+    el.querySelectorAll("[href], [src]").forEach((element) => {
+
+      const attribute =
+        element.hasAttribute("href")
+          ? "href"
+          : "src";
+
+      const value =
+        element.getAttribute(attribute);
+
+      if (!value) return;
+
+      // Älä koske ulkoisiin linkkeihin,
+      // sähköpostiin, ankkureihin tai jo absoluuttisiin polkuihin.
+
+      if (
+        value.startsWith("http://") ||
+        value.startsWith("https://") ||
+        value.startsWith("//") ||
+        value.startsWith("#") ||
+        value.startsWith("mailto:") ||
+        value.startsWith("tel:") ||
+        value.startsWith("/")
+      ) {
+        return;
+      }
+
+      element.setAttribute(
+        attribute,
+        SITE_ROOT + value
+      );
+    });
+
   } catch (err) {
+
     console.error(
       `Komponentin lataus epäonnistui (${file}):`,
       err
     );
+
   }
 }
 
@@ -112,7 +174,7 @@ function initNav() {
   });
 
 
-  // ── Sulje valikko navin ulkopuolelta klikattaessa ───────
+  // ── Sulje valikko navin ulkopuolelta ─────────────────────
 
   const siteNav =
     document.getElementById("site-nav");
