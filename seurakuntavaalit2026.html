@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juhani Sillanpää – ehdolla seurakuntavaaleissa 2026</title>
+    <meta name="description" content="Juhani Sillanpää on ehdolla seurakuntaneuvostoon ja yhteiseen kirkkovaltuustoon Tikkurilan seurakunnassa. Vaalipäivä 15.11.2026." />
+    <meta property="og:title" content="Juhani Sillanpää – ehdolla seurakuntavaaleissa 2026" />
+    <meta property="og:description" content="Ehdolla Tikkurilan seurakunnassa. Vaalipäivä 15.11.2026, ennakkoäänestys 3.–7.11.2026." />
+    <meta property="og:image" content="/images/seurakuntavaalit26_2.webp" />
+    <meta property="og:type" content="website" />
+    <!-- Jos haluat piilottaa sivun hakukoneilta, poista kommentti: -->
+    <!-- <meta name="robots" content="noindex" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="/javascript/main.js" defer></script>
+
+    <!-- ==========================================================
+         SIVUKOHTAISET TYYLIT (väliaikainen sivu, poistuu sivun mukana)
+         Kaikilla luokilla etuliite .sv-
+         ========================================================== -->
+    <style>
+      :root {
+        --sv-cream: #fef8e6;      /* sama sävy kuin ehdokaskuvan tausta */
+        --sv-orange: #f2902f;
+        --sv-orange-dark: #c2570b;
+      }
+
+      body { background: var(--sv-cream); }
+
+      .sv-section { padding: var(--space-lg) 0; }
+      .sv-text { max-width: 700px; margin: 0 auto; }
+      .sv-text h1 {
+        font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+        text-align: left;
+      }
+      .sv-text h2 { margin-top: var(--space-lg); }
+      .sv-text a:not(.btn) {
+        color: var(--color-primary);
+        border-bottom: 1px solid var(--color-primary);
+      }
+      .sv-text a:focus-visible,
+      .back-to-writings:focus-visible {
+        outline: 3px solid var(--sv-orange-dark);
+        outline-offset: 3px;
+      }
+
+      /* ── Ilmoituskaista (poista hidden-attribuutti vaalien jälkeen) ── */
+      .sv-notice {
+        background: var(--color-primary);
+        color: #fff;
+        text-align: center;
+        padding: 0.75rem var(--container-padding);
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+      }
+      .sv-notice[hidden] { display: none; }
+
+      /* ── HERO: kuva + kaksi numerolaatikkoa ── */
+      .sv-hero { padding: var(--space-lg) 0 var(--space-md); }
+      .sv-hero-inner { max-width: 520px; margin: 0 auto; }
+      .sv-hero-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center 20%;
+        border-radius: 16px;
+      }
+      .sv-numbers {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+      }
+      @media (max-width: 420px) {
+        .sv-numbers { grid-template-columns: minmax(0, 1fr); }
+      }
+      .sv-number-box {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem 0.5rem 1.1rem;
+        border-radius: 16px;
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+      }
+      .sv-number-box--white {
+        background: #fff;
+        border: 2px solid var(--color-primary);
+      }
+      .sv-number-box--orange { background: var(--sv-orange); }
+      .sv-number-top {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+      }
+      .sv-number {
+        font-size: clamp(2.75rem, 12vw, 4.5rem);
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .sv-number-bottom {
+        font-size: clamp(0.78rem, 3.4vw, 0.95rem);
+        font-weight: 400;
+        line-height: 1.3;
+      }
+
+      /* ── Miksi olen ehdolla: teksti + pystykuva ── */
+      .sv-why {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        align-items: start;
+      }
+      .sv-why-photo {
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center 30%;
+        border-radius: 16px;
+        margin: 0 auto;
+      }
+      @media (min-width: 860px) {
+        .sv-why { grid-template-columns: 1fr 380px; gap: var(--space-lg); }
+        .sv-why-photo { position: sticky; top: var(--space-md); }
+      }
+
+      /* ── Viisi tavoitetta ── */
+      .sv-points {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        margin: var(--space-sm) 0 0;
+      }
+      .sv-points .teema-card { border-top-color: var(--sv-orange); }
+      .sv-points .teema-card:hover { transform: none; }
+
+      /* ── Äänestystiedot ── */
+      .sv-vote {
+        margin-top: var(--space-lg);
+        padding: var(--space-md);
+        background: #fff;
+        border: 1px solid var(--color-border);
+        border-left: 6px solid var(--sv-orange);
+        border-radius: var(--radius);
+      }
+      .sv-vote p:last-child { margin-bottom: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <!-- Vaalien jälkeen: poista hidden ja muokkaa teksti -->
+      <p class="sv-notice" hidden>Seurakuntavaalit on käyty. Tämä sivu on säilytetty muistoksi.</p>
+
+      <!-- HERO -->
+      <section class="sv-hero">
+        <div class="container">
+          <div class="sv-hero-inner">
+            <img class="sv-hero-photo" src="/images/seurakuntavaalit26_2.webp" width="1080" height="1080" alt="Juhani Sillanpää, ehdokaskuva" />
+
+            <div class="sv-numbers">
+              <div class="sv-number-box sv-number-box--white">
+                <span class="sv-number-top">ÄÄNESTÄ</span>
+                <span class="sv-number">46</span>
+                <span class="sv-number-bottom">Yhteinen kirkkovaltuusto</span>
+              </div>
+              <div class="sv-number-box sv-number-box--orange">
+                <span class="sv-number-top">ÄÄNESTÄ</span>
+                <span class="sv-number">99</span>
+                <span class="sv-number-bottom">Seurakuntaneuvosto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESITTELY -->
+      <section class="sv-section">
+        <div class="container">
+          <div class="sv-text">
+            <h1>Olen Juhani Sillanpää, pian 34-vuotias hiekkaharjulainen ehdokas.</h1>
+            <p>Olen ehdolla seurakuntaneuvostoon ja yhteiseen kirkkovaltuustoon seurakuntavaaleissa Tikkurilan seurakunnassa Vantaalla.</p>
+            <p>Seurakuntavaaleissa valitset ne ihmiset, jotka päättävät seurakuntasi asioista. Yhteinen kirkkovaltuusto päättää koko seurakuntayhtymää koskevista asioista: talousarviosta, kirkollisverosta, kiinteistöistä ja rakennushankkeista. Seurakuntaneuvosto päättää oman seurakunnan toiminnan painopisteistä, strategiasta, varojen käytöstä ja omaisuudesta.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MIKSI OLEN EHDOLLA + KUVA -->
+      <section class="sv-section">
+        <div class="container">
+          <div class="sv-why">
+            <div class="sv-text" style="margin:0;max-width:none;">
+              <h2 style="margin-top:0;">Miksi olen ehdolla</h2>
+              <p>Tikkurilan seurakunnasta tuli minulle tärkeä lepopaikka keväällä 2025 kunta- ja aluevaalien alla. Kampanjoin runsaasti Tikkurilan kirkon edessä, ja kirkon tiloissa oli helppo käydä levähtämässä, esimerkiksi kahviossa. Myöhemmin messuista on tullut osa elämääni. Seurakunnan kasvanut rooli elämässäni sai minut miettimään tänä syksynä, voisinko vaikuttaa seurakunnan toimintaan itsekin.</p>
+              <p>Lähdin ehdolle Sanasta elämään -listalta, koska sen hengelliset periaatteet olivat lähimpänä omaa arvomaailmaani. Listan koko ohjelma löytyy <a href="https://www.sanastaelamaan.fi/sanasta-elamaan-yhdistys-julkaisi-ohjelmansa-jouko-jaaskelainen/" target="_blank" rel="noopener">täältä</a>.</p>
+            </div>
+            <img class="sv-why-photo" src="/images/seurakuntavaalit26_1.webp" width="1200" height="1500" loading="lazy" alt="Juhani Sillanpää Tikkurilan kirkon edessä" />
+          </div>
+        </div>
+      </section>
+
+      <!-- MITÄ TUON MUKANANI + MITÄ AJAN -->
+      <section class="sv-section">
+        <div class="container">
+          <div class="sv-text">
+            <h2 style="margin-top:0;">Mitä tuon mukanani</h2>
+            <p>Minulla on kymmenen vuoden kokemus rakennusalalta, joista viimeiset viisi vuotta olen toiminut työnjohtajana ja nokkamiehenä. Työ on opettanut henkilöstöjohtamista, budjetinhallintaa ja prosessien edistämistä. Näitä taitoja tarvitaan, kun päätetään seurakunnan kiinteistöistä, rakennushankkeista ja talousarviosta.</p>
+            <p>Kaupallinen ala ja myyntityö ovat opettaneet minulle, miten asiansa perustellaan ja miten ihmisiä kuunnellaan. Paikallisessa yhdistystoiminnassa olen toiminut puheenjohtajana ja sihteerinä, joten kokouskäytännöt ja päätöksenteko ovat minulle tuttuja.</p>
+
+            <h2>Mitä ajan</h2>
+            <div class="sv-points">
+              <article class="teema-card">
+                <h3>1. Evankeliumi ja Raamattu ensin</h3>
+                <p>Seurakunnan tärkein tehtävä on kertoa evankeliumista ja kutsua ihmisiä uskomaan Jeesukseen. Koen, että opetuksen ja toiminnan pitää perustua Raamattuun ja luterilaiseen tunnustukseen, ja että se näkyy selvästi myös käytännössä. Epävarmassa ajassa seurakunta on monelle turvallinen kiintopiste.</p>
+              </article>
+              <article class="teema-card">
+                <h3>2. Terve talous, jotta toimintaan on varaa</h3>
+                <p>Hyvä hallinto ja kestävä talous ovat edellytys sille, että seurakunta pystyy tekemään sitä, mitä varten se on olemassa. Haluan, että rahaa riittää rippikouluun, raamattuopetukseen ja pyhäkouluun, ja että ihmiset löytävät mukaan jumalanpalveluksiin ja seurakunnan toimintaan. Pidetään talous kunnossa, jotta toimintaan on varaa!</p>
+              </article>
+              <article class="teema-card">
+                <h3>3. Perheet, lapset ja nuoret</h3>
+                <p>Haluan tukea perheitä ja kristillistä avioliittoa. Lasten ja nuorten kristillinen kasvatus tehdään ennen kaikkea kodeissa ja seurakunnassa, ja siinä tarvitaan yhteistyötä myös päiväkotien ja koulujen kanssa. Nuorten kiinnostus uskoa kohtaan on kasvanut, ja toivon, että seurakunta tarttuu siihen.</p>
+              </article>
+              <article class="teema-card">
+                <h3>4. Kohtaaminen ja toimivat tilat</h3>
+                <p>Haluan, että seurakunta kohtaa maahanmuuttajat ja syrjäytymisvaarassa olevat ihmiset aktiivisesti ja tekee työtä yhdessä muiden toimijoiden kanssa. Seurakunnan tilojen pitää olla toimivia ja terveysturvallisia, koska tilat ovat paikka, jossa kohtaaminen tapahtuu.</p>
+              </article>
+              <article class="teema-card">
+                <h3>5. Apua hädässä olevalle ja seurakunnan rahat</h3>
+                <p>Taloudellinen ahdinko painaa usein myös mieltä ja uskoa. Haluan, että työntekijöillä ja vapaaehtoisilla on taitoa ja mahdollisuuksia kohdata ihmisiä, joilla menee huonosti. Vaikutan siihen, että valtion tuki hautausmaiden ja arvorakennusten hoitoon säilyy, ja että hautaustoimilakia korjataan niin, että seurakunnan jäsenet saavat maksuihin alennuksen. He ovat jo maksaneet veronsa seurakunnalle.</p>
+              </article>
+            </div>
+
+            <h2>Äänestä ja ota yhteyttä</h2>
+            <p>Äänestämällä vaikutat siihen, mihin yhteisiä resursseja käytetään ja millaista toimintaa omassa seurakunnassa tehdään. Kannattaa käydä äänestämässä.</p>
+            <div class="sv-vote">
+              <p><strong>Vaalipäivä on 15.11.2026. Ennakkoäänestys on 3.–7.11.2026.</strong> Lisätietoa: <a href="https://www.kirkkovantaalla.fi" target="_blank" rel="noopener">kirkkovantaalla.fi</a>.</p>
+<p>Ehdokasnumeroni yhteiseen kirkkovaltuustoon on <em>46</em> ja Tikkurilan seurakuntaneuvostoon <em>99</em>. Jos haluat kysyä jotain ohjelmastani tai seurakuntatyöstä, kirjoita minulle: <em>juhani.p.sillanpaa@gmail.com</em>.</p>
+            </div>
+
+            <a href="/index.html" class="back-to-writings">← Palaa etusivulle</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+  </body>
+</html>
