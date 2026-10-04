@@ -2,10 +2,10 @@
    HERO.CSS
    Vaatii: style.css (design tokens ja fontit)
    Kuvat:
-     Desktop-tausta: /images/hero/hero1tausta.webp (1920x700px)
-     Mobiili-tausta: /images/hero/hero1taustapysty.webp (600x900px)
-     Kasvokuva:      /images/hero/juhanisillanpaa400x400.webp
-   ========================================================== */
+     Desktop-tausta: images/hero/hero1tausta.webp (1920x700px)
+     Mobiili-tausta: images/hero/hero1taustapysty.webp (600x900px)
+     Kasvokuva:      images/hero/juhanisillanpaa400x400.webp
+   ========================================================== }
 
 
 /* ==========================================================
@@ -33,7 +33,7 @@
 
 #hero1,
 #hero2 {
-  background: url('/images/hero/hero1tausta.webp')
+  background: url('images/hero/hero1tausta.webp')
     center center / 100% 100% no-repeat;
  min-height: 36.46vw;
   }
@@ -156,7 +156,7 @@
 
   #hero1,
   #hero2 {
-    background: url('/images/hero/hero1taustapysty.webp')
+    background: url('images/hero/hero1taustapysty.webp')
       center center / 100% 100% no-repeat;
     padding-bottom: 150%;
   }
@@ -218,7 +218,7 @@
 
 /*
 #hero3 {
-  background: url('/images/hero/hero1tausta.webp')
+  background: url('images/hero/hero1tausta.webp')
     center center / 100% 100% no-repeat;
   padding-bottom: 36.46%;
 }
@@ -232,7 +232,7 @@
 
 @media (max-width: 600px) {
   #hero3 {
-    background: url('/images/hero/hero1taustapysty.webp')
+    background: url('images/hero/hero1taustapysty.webp')
       center center / 100% 100% no-repeat;
     padding-bottom: 150%;
   }
