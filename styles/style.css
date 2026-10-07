@@ -552,18 +552,18 @@ blockquote p {
   width: 100%;
   overflow: hidden;
 
-  background: url('../images/hero/juhanibanneri.webp')
-    center center / 100% 100% no-repeat;
+  background: url("../images/hero/juhanibanneri.webp") center center / 100% 100%
+    no-repeat;
 
   min-height: 36.46vw;
 }
 
 /* Vihreä overlay 70% */
 .juhani-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 59, 31, 0.40);
+  background: rgba(7, 59, 31, 0.4);
   z-index: 1;
 }
 
@@ -672,7 +672,7 @@ blockquote p {
 
 /* ── KUVAPUOLI ────────────────────────────────────────────── */
 .teema-split-img {
-  flex: 0 0 40%;       /* kuva vie aina 40% leveydestä */
+  flex: 0 0 40%; /* kuva vie aina 40% leveydestä */
   align-self: stretch; /* venyttää kuvan kortin korkuiseksi */
   overflow: hidden;
 }
@@ -716,7 +716,6 @@ blockquote p {
 
 /* ── MOBIILI: kuva aina ylös, teksti alas ─────────────────── */
 @media (max-width: 600px) {
-
   .teema-split-card,
   .teema-split-card:nth-child(even) {
     flex-direction: column !important;
@@ -725,7 +724,7 @@ blockquote p {
   .teema-split-img {
     flex: 0 0 auto;
     width: 100%;
-    height: 220px;     /* kiinteä korkeus mobiilissa */
+    height: 220px; /* kiinteä korkeus mobiilissa */
   }
 
   .teema-split-content {
@@ -743,10 +742,6 @@ blockquote p {
    LUE LISÄÄ -TOIMINTO
    Lisää style.css:n loppuun
    ========================================================== */
-
-.lisaa-teksti {
-  /* näkyy oletuksena */
-}
 
 .lisaa-teksti--piilotettu {
   display: none;
