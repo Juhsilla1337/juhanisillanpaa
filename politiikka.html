@@ -4,119 +4,511 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Politiikka - Juhani Sillanpää</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles/style.css">
-<link rel="stylesheet" href="styles/header.css">
-<link rel="stylesheet" href="styles/footer.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<script src="javascript/main.js" defer></script>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <script src="javascript/main.js" defer></script>
+  </head>
   <body>
-   <div id="header-placeholder"></div>  
-<main>
 
-  
+    <div id="header-placeholder"></div>
 
-<section class="teemat-osio">
-  <div class="container">
+    <main>
 
-    <div class="teema-lista">
+      <!-- ── JOHDANTO ──────────────────────────────────────── -->
+      <section>
+        <div class="container">
+          <div class="blog-post">
 
-      <!-- KORTTI 1: Turvallisuus (kuva vasemmalla) -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/turvallisuus.webp" alt="Suomen lippu" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Turvallisuus</h2>
-          <p>
-            Turvallisuus on kaiken perusta — ulkoinen, sisäinen ja kyberturvallisuus.
-            Suomen on kyettävä puolustamaan itseään ja kansalaisiaan kaikissa
-            tilanteissa.
-          </p>
-        </div>
-      </article>
+            <h1>Politiikka</h1>
 
-      <!-- KORTTI 2: Vapaus (kuva oikealla – automaattinen) -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/vapaus.webp" alt="Avoin suomalainen maisema" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Vapaus</h2>
-          <p>
-            Jokaisella on oikeus elää, puhua ja toimia vapaasti.
-            Vapaus ei ole itsestäänselvyys — se on arvo jota on vaalittava
-            ja puolustettava aktiivisesti.
-          </p>
-        </div>
-      </article>
+            <p>
+              Tämä ei ole valmis vaaliohjelma – eikä siitä ole tarkoituksaan
+              tehdä sellaista. Tämä sivu kertoo siitä, millaista päätöksentekoa
+              minulta voi odottaa ja mitä asioita pidän tärkeinä.
+            </p>
 
-      <!-- KORTTI 3: Koulutuksen turvaaminen -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/koulutus.webp" alt="Koululuokka" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Koulutuksen turvaaminen</h2>
-          <p>
-            Laadukas koulutus on jokaisen oikeus asuinpaikasta riippumatta.
-            Kyläkoulut ja lähikoulut ovat investointi tulevaisuuteen,
-            ei kuluerä.
-          </p>
-        </div>
-      </article>
+            <p>
+              En ole suurten sloganien julistaja. Minua kiinnostavat enemmän
+              konkreettiset ongelmat ja toimivat ratkaisut. Haluan ymmärtää,
+              missä ongelma on, selvittää siihen vaikuttavat asiat ja etsiä
+              ratkaisua, joka toimii käytännössä. Kaikkeen ei välttämättä löydy
+              helppoa ratkaisua, mutta ongelmien kanssa ei pidä myöskään jäädä
+              vain voivottelemaan.
+            </p>
 
-      <!-- KORTTI 4: Laadukas terveydenhoito -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/terveys.webp" alt="Tammisairaala" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Laadukas terveydenhoito</h2>
-          <p>
-            Terveydenhuollon on oltava lähellä — ei vain kartalla vaan myös
-            jonotusajassa. Ennaltaehkäisy säästää sekä kärsimystä että euroja.
-          </p>
-        </div>
-      </article>
+            <p>
+              Ajattelen politiikkaa paljon samalla tavalla kuin suhtaudun
+              ihmisten muihinkin ongelmiin:
+            </p>
 
-      <!-- KORTTI 5: Omavaraisuus ja huoltovarmuus -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/omavaraisuus.webp" alt="Pihakasvilaatikko" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Omavaraisuus ja huoltovarmuus</h2>
-          <p>
-            Suomen on kyettävä huolehtimaan itsestään kriisitilanteissa.
-            Kotimainen ruoantuotanto, energia ja huoltovarmuus ovat
-            kansallisen turvallisuuden kulmakiviä.
-          </p>
-        </div>
-      </article>
+            <blockquote>
+              <p>
+                "Tuo ongelmasi minulle. Katsotaan yhdessä, mistä siinä on kyse,
+                pohditaan vaihtoehtoja ja yritetään löytää toimiva ratkaisu."
+              </p>
+            </blockquote>
 
-      <!-- KORTTI 6: Lähiluonto -->
-      <article class="teema-split-card">
-        <div class="teema-split-img">
-          <img src="images/teemat/lahiluonto.webp" alt="Tussinkoski, Korso" />
-        </div>
-        <div class="teema-split-content">
-          <h2>Lähiluonto</h2>
-          <p>
-            Puhdas luonto ja lähivirkistysalueet ovat kaupunkilaisenkin
-            perusoikeus. Tussinkosken kaltaiset paikat on säilytettävä
-            tuleville sukupolville.
-          </p>
-        </div>
-      </article>
+            <h2>Sivu on ikuisuusprojektini</h2>
 
-    </div>
-  </div>
-</section>
-</main>
-<div id="footer-placeholder"></div>
-</body>
+            <p>
+              Tämä sivu on myös muistutus itselleni siitä, miksi olen lähtenyt
+              mukaan politiikkaan, mitä haluan päätöksenteolla edistää ja
+              millaisia periaatteita haluan omassa toiminnassani noudattaa.
+            </p>
+
+            <p>
+              Ajatteluni ei ole kiveen hakattu. Jos opin uutta, löydän paremman
+              ratkaisun tai näkemykseni muuttuu, myös tämä sivu voi muuttua.
+              En pidä muuttumatonta mielipidettä itsessään hyveenä, vaan pidän
+              tärkeämpänä sitä, että päätökset perustuvat mahdollisimman hyvään
+              tietoon ja toimiviin ratkaisuihin.
+            </p>
+
+            <p>
+              Siksi päivitän sivua tarpeen mukaan ja silloin, kun koen
+              ajatteluni kehittyneen. Haluan myös kertoa muutoksista avoimesti
+              kirjoituksissani ja perustella, miksi olen muuttanut kantaani.
+            </p>
+
+            <p>
+              Tässä siis minun tämänhetkinen näkemykseni siitä, millaista
+              päätöksentekoa haluan tehdä.
+            </p>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TEEMAT ─────────────────────────────────────────── -->
+      <section class="teemat-osio">
+        <div class="container">
+          <div class="teema-lista">
+
+
+            <!-- KORTTI 1: Työ ja talous -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/tyojatalous.webp" alt="Työ ja talous" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Työ ja talous</h2>
+                <p>
+                  Jokaisen on tultava toimeen lähtökohtaisesti omillaan.
+                  Siihen on kuitenkin annettava edellytykset. Työn tarkoitus
+                  on kustantaa eläminen, ei elämän itseistarkoitus.
+                  Työläinen on palkkansa ansainnut.
+                </p>
+                <p>
+                  Suomen talous huutaa kasvua. Talouskasvu ja yritysten
+                  menestyminen kasvattavat veropohjaa ja luovat edellytyksiä
+                  suuremmille verotuloille.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Suomen talous voi tällä hetkellä huonosti. Julkiset menot
+                    ovat liian suuret verrattuna tulopuoleen. Jälkimmäinen on
+                    erittäin epäkestävä tapa rahoittaa pysyviä menoja.
+                  </p>
+                  <p>
+                    Yksityinen sektori tuottaa verotuloja sekä veroprosenttien
+                    että veropohjan kautta. Yksi tapa saada julkinen talous
+                    kuntoon on menoleikkaukset. Mielestäni mieluisin tapa
+                    hoitaa julkista taloutta on kuitenkin kasvattaa veropohjaa
+                    ja pitää julkiset menot maltillisina.
+                  </p>
+                  <p>
+                    Nyt resepti on perin itsetuhoinen: menoleikkaukset
+                    yhteiskunnan ydintehtäviin, holtittomat julkiset menot,
+                    korkea veroprosentti ja runsas velanotto.
+                  </p>
+                  <p>
+                    Pienet ja keskisuuret yrittäjät ovat osa tämän maan
+                    selkärankaa. Niille on tarjottava edellytykset tuottaa
+                    tulosta. Ongelmaksi monelle pienelle yritykselle koituu
+                    nykyinen YEL-malli. Tätä järjestelmää on korjattava siten,
+                    että YEL-maksu perustuu yrittäjän veronalaisiin
+                    ansiotuloihin.
+                  </p>
+                  <p>
+                    YEL-maksuprosentin tulee olla kohtuullinen ja
+                    vakuuttamisvelvollisuuden tulorajoja tulee nostaa
+                    nykyisestä. Lisäksi YEL-maksulle tulisi asettaa
+                    euromääräinen vuosittainen yläraja.
+                  </p>
+                  <p>
+                    Yrittäjäpolitiikan tulee olla ennustettavaa eikä
+                    poukkoilevaa. Jokainen veroprosentin muutos suuntaan tai
+                    toiseen tuo kustannuksia yrittäjille. Yrityksille
+                    ennakoitavuus on itsessään kilpailuetu.
+                  </p>
+                  <p>
+                    Ahkeralle ja tunnolliselle tekijälle kuuluu kunnon palkka.
+                    Sunnuntain tuplapalkkaan ei pidä koskea. Jos ihminen antaa
+                    perheelle ja vapaa-ajalle tarkoitetun päivän työn käyttöön,
+                    siitä kuuluu maksaa asianmukainen korvaus.
+                  </p>
+                  <p>
+                    Talousasioissa ja konkreettisissa keinoissa yhdyn täysin
+                    Roinisen lista I:n ja Roinisen lista II:n sisältöön.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 2: Digitalisaatio -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/digitalisaatio.webp" alt="Digitalisaatio" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Digitalisaatio</h2>
+                <p>
+                  Maailma muuttuu jatkuvasti analogisesta digitaalisemmaksi,
+                  ja isänmaamme olisi suorastaan pysyttävä kehityksen perässä
+                  ja mieluummin edelläkävijänä.
+                </p>
+                <p>
+                  Tekoäly on hyvä renki, mutta huono isäntä. Digitalisaatiossa
+                  pitää kuitenkin muistaa ihminen.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Maailma digitalisoituu hurjaa vauhtia. Ihmisillä on
+                    tietokoneet, puhelimet, tabletit ja kaikenlaista muuta
+                    älyteknologiaa. Nämä laitteet ovat monelle arjessa jo
+                    välttämättömiä.
+                  </p>
+                  <p>
+                    Suomessa digitalisaatiota ovat edistäneet monet IT-alan
+                    yritykset, Nokia, puhelinoperaattorit ja kokonaiset uudet
+                    toimialat. Digitalisaatio on tuonut Suomeen valtavasti
+                    uutta liiketoimintaa ja mahdollisuuksia.
+                  </p>
+                  <p>
+                    Vuonna 2026 Suomella on omat Piilaaksomme. Oulu ja
+                    Keilaniemi–Otaniemi ovat kansainvälisesti merkittäviä
+                    teknologia- ja innovaatiokeskittymiä.
+                  </p>
+                  <p>
+                    Käytän itse tekoälyä päivittäin ja olen huomannut, kuinka
+                    paljon se auttaa erilaisissa asioissa. Tekoälyn käytössä
+                    on myös riskinsä — sen tuottama tieto ei välttämättä aina
+                    ole täysin oikeaa. Tekoäly todella on hyvä renki, mutta
+                    päätökset tulee edelleen tehdä ihmisen.
+                  </p>
+                  <p>
+                    Kaikkia palveluita ei pidä siirtää digitaalisiksi vain
+                    siksi, että se on mahdollista. Viranomaispalveluissa on
+                    oltava mahdollisuus asioida myös ihmisen kanssa silloin,
+                    kun siihen on todellinen tarve.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 3: Vapaus -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/vapaus.webp" alt="Vapaus" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Vapaus</h2>
+                <p>
+                  Kannatan laajoja yksilönvapauksia ja sitä, että valtio
+                  puuttuu ihmisten asioihin mahdollisimman vähän. Ihmisillä
+                  on oltava laaja sananvapaus, yksityisyydensuoja,
+                  kokoontumisvapaus ja vapaus uskonnon harjoittamiseen.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Suomi ei voi joutua tilanteeseen, jossa ihminen joutuu
+                    miettimään rangaistuksen pelossa, mitä mielipiteitä saa
+                    sanoa. Siniristilippumme symboloi minulle laajaa sanan-
+                    ja mielipiteenvapautta. Kaikkea pitää saada arvostella ja
+                    kritisoida, kunhan se tehdään asiallisesti.
+                  </p>
+                  <p>
+                    En kannata uusia yleisiä vihapuhetta koskevia
+                    rikosnimikkeitä. Meillä on kunnianloukkausta ja
+                    kiihottamista kansanryhmää vastaan koskevat säännökset,
+                    joiden tulee riittää.
+                  </p>
+                  <p>
+                    Suomessa tulee kunnioittaa ihmisten yksityisyyttä. Tämä
+                    tarkoittaa sitä, että yksilöihin kohdistuvaa valvontaa
+                    ei saa toteuttaa ilman painavia perusteita. Esimerkkinä
+                    tästä ovat CSAM-asetukseen liittyvät Chat Control
+                    -ehdotukset — ajatus oli hyvä mutta keino väärä.
+                  </p>
+                  <p>
+                    Tiedonkeruun ihmisistä pitää olla perusteltua, ja tähän
+                    meillä on GDPR-lainsäädäntö EU:n kautta. Myös vakavan
+                    huolimattomuuden tulee olla peruste juridisille
+                    seuraamuksille koskien ihmisten yksityisiä tietoja.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 4: Turvallisuus -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/turvallisuus.webp" alt="Turvallisuus" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Turvallisuus</h2>
+                <p>
+                  Tuntemani Suomi on ollut turvallinen lintukoto. Verrattuna
+                  muuhun maailmaan Suomi on edelleen turvallinen maa.
+                  Poliittisessa päätöksenteossa pyrin siihen, että Suomi on
+                  turvallinen maa mahdollisimman monelle.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Turvallisuuspolitiikassani painotukseni osuu ulkoiseen
+                    turvallisuuteen ja erityisesti sisäiseen turvallisuuteen
+                    sekä kyberturvallisuuteen.
+                  </p>
+                  <p>
+                    Näen, että nykyisessä maailmantilanteessa Suomi on tehnyt
+                    oikeita ratkaisuja rahoittaessaan puolustusvoimia.
+                    Voimapolitiikan palatessa näyttämölle pitäisin
+                    puolustus&shy;määrärahat korkealla. Suomen on tehtävä
+                    yhteistyötä kaikkien kanssa turvallisuuden
+                    maksimoimiseksi.
+                  </p>
+                  <p>
+                    Sisäinen turvallisuustilanne on heikentynyt jonkin verran
+                    lisääntyneen ulkomaisen järjestäytyneen rikollisuuden,
+                    poliittisten ja uskonnollisten ääriliikkeiden
+                    radikalisoitumisen sekä nuorten pahoinvoinnin takia.
+                    Huumerikollisuuteen tulisi puuttua siten, että käyttäjät
+                    hoitoon ja rikollisuuteen osallistuneille kovemmat
+                    rangaistukset.
+                  </p>
+                  <p>
+                    Nuorten pahoinvointiin tulee puuttua lähtökohtaisesti
+                    ennaltaehkäisevin keinoin. Matalan kynnyksen
+                    mielenterveyspalvelut on saatava kuntoon. Suomi on pieni
+                    maa ja me tarvitsemme kaikki mukaan.
+                  </p>
+                  <p>
+                    Kyberturvallisuus on kasvattanut merkitystään
+                    digitalisaation määrän kasvaessa. Yksilötasolla
+                    kansalaisten arkaluonteiset ja yksityiset tiedot on
+                    suojattava ja jokainen järjestelmä on suojattava
+                    mahdollisimman hyvin.
+                  </p>
+                  <p>
+                    Infrastruktuuri- ja energiaturvallisuus on noussut myös
+                    tapetille. Kriittistä infraa koskevat yksityiskohtaiset
+                    sijaintitiedot tulee suojata ja niiden julkista jakelua
+                    tulee arvioida kriittisesti.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 5: Koulutuksen turvaaminen -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/koulutus.webp" alt="Koulutuksen turvaaminen" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Koulutuksen turvaaminen</h2>
+                <p>
+                  Suomen tulee olla sivistyksen ja korkealaatuisen koulutuksen
+                  kärkimaa. Koulutuksesta ei tule leikata yhtään enempää.
+                  Korkealaatuinen koulutus vaikuttaa suoraan kasvuun ja
+                  maamme hyvinvointiin.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Koulutuksen rahoitusta on vuosien mittaan leikattu
+                    epäkestävällä tavalla. Tämä on johtanut siihen, että
+                    oppilaiden osaaminen on heikentynyt. Erityisesti
+                    ammattikoulutuspuolella.
+                  </p>
+                  <p>
+                    Laskevat PISA-tulokset ovat olleet huolestuttavia.
+                    Oppimistulosten heikkenemiseen on esitetty useita syitä:
+                    lisääntyneet häiriöt oppitunneilla, mobiililaitteiden
+                    käytön lisääntyminen ja liian suuret luokkakoot.
+                    Opettajille on annettava laajemmat resurssit ja suurempi
+                    tuki.
+                  </p>
+                  <p>
+                    Koulusta ja koulutuksesta pidetään ideologiat pois.
+                    Ideologioiden yksipuolisten näkemysten jakaminen
+                    objektiivisena totuutena ei kuulu kouluun.
+                  </p>
+                  <p>
+                    Toivon vaikuttaa siihen, että opetussuunnitelmaan
+                    lisättäisiin talousoppia ja liikuntaa enenevissä määrin.
+                    Talousoppi voisi alkaa yläasteella — oppiaineessa voisi
+                    opettaa säästämistä, sijoittamista ja vastuullista
+                    rahankäyttöä.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 6: Laadukas terveydenhoito -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/terveys.webp" alt="Laadukas terveydenhoito" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Laadukas terveydenhoito</h2>
+                <p>
+                  Laadukas terveydenhoito on yksi valtion perustehtävistä.
+                  Palvelut on turvattava ja tekijöiden oloja on parannettava.
+                  Terveydenhoidon saavutettavuuden kynnyksen tulee olla
+                  matala.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Terveydenhoito on koulutuksen lisäksi yksi niistä
+                    peruspilareista, joihin leikkausten ei tulisi osua enää.
+                    Laadukkaan terveydenhoidon on oltava kaikille
+                    saavutettavissa matalalla kynnyksellä.
+                  </p>
+                  <p>
+                    Kannan huolta myös hoitohenkilöstön jaksamisesta.
+                    Moni hoitaja vaihtaa alaa sietämättömien
+                    työolosuhteiden vuoksi. Hoitajien ja lääkärien tulee
+                    saada keskittyä omaan työhönsä — mahdollisimman
+                    tehokkaaseen ja laadukkaaseen potilaan hoitotyöhön.
+                  </p>
+                  <p>
+                    Laadukas terveydenhoito pitää ihmiset paremmin
+                    työkykyisinä, mikä vaikuttaa suoraan
+                    sairauspoissaolojen määrään ja sitä kautta talouteen.
+                    Siksi terveydenhoitoa ei saa nähdä vain menoeränä.
+                  </p>
+                  <p>
+                    Kannatan omalääkäri- ja ammatinharjoittajalääkärimallia
+                    puolueeni linjaa noudattaen. Hoitajavetoisten
+                    sote-pisteiden perustaminen on kannatettavaa.
+                    Loppukaneettina: Suomessa on turvattava laadukas
+                    julkinen terveydenhoito.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 7: Omavaraisuus ja huoltovarmuus -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/omavaraisuus.webp" alt="Omavaraisuus ja huoltovarmuus" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Omavaraisuus ja huoltovarmuus</h2>
+                <p>
+                  Suomen omavaraisuusaste ja huoltovarmuustaso ovat hyviä,
+                  mutta niitä voidaan parantaa. Maatalous ja ruokatuotanto,
+                  energia, kriittinen infrastruktuuri ja raaka-aineiden saanti
+                  ovat yhteiskunnan toiminnan kannalta tärkeitä.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Maatalous ja ruokatuotanto ovat olleet Suomen yksi
+                    viennin ja omavaraisuuden kulmakiviä. Maatalous on
+                    kuitenkin ollut pidemmän aikaa ongelmissa kasvavien
+                    tuotantokustannusten takia. Maatiloja lopettaa
+                    toimintansa jatkuvasti.
+                  </p>
+                  <p>
+                    Suomi on tällä hetkellä melko öljyriippuvainen maa.
+                    Siksi olisi hyvä panostaa erilaisten biopolttoaineiden
+                    kehitykseen siten, että tuotantovolyymia saadaan
+                    suuremmaksi.
+                  </p>
+                  <p>
+                    Sähköntuotanto on turvattava. Tämä tarkoittaa
+                    investointeja uusiutuvaan tuotantoon ja ydinvoimaan.
+                    Ydinvoima on tällä hetkellä yksi tärkeimmistä tavoista
+                    tuottaa Suomessa vakaasti suuria määriä vähäpäästöistä
+                    sähköä. Suomessa tulisi tutkia mahdollisuutta
+                    pienydinvoimaloiden rakentamiselle.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+            <!-- KORTTI 8: Lähiluonto -->
+            <article class="teema-split-card">
+              <div class="teema-split-img">
+                <img src="images/teemat/lahiluonto.webp" alt="Lähiluonto" />
+              </div>
+              <div class="teema-split-content">
+                <h2>Lähiluonto</h2>
+                <p>
+                  Lähiluonnon suojelu on tärkeää. Suomessa on
+                  kulttuurihistoriallisesti arvokkaita luontokohteita,
+                  joita tulee suojella perintönä tuleville sukupolville.
+                </p>
+
+                <div class="lisaa-teksti lisaa-teksti--piilotettu">
+                  <p>
+                    Itämeri on nyt haavoittuneessa ja heikossa tilassa.
+                    Mereen päätyvä fosfori ja typpi aiheuttavat
+                    rehevöitymistä ja leväkukintoja. Maataloudessa
+                    syntyviä ravinteita, erityisesti fosforia, saadaan
+                    tehokkaammin talteen ja kierrätettyä uudelleen
+                    käytettäväksi sen sijaan, että niitä päätyy vesistöihin.
+                  </p>
+                  <p>
+                    Ympäristönsuojelu on tärkeä arvo minulle muutenkin.
+                    Yhteiskunnan toiminnassa tulisi huomioida se, että
+                    ympäristöä kulutetaan vain tarpeen mukaan
+                    ydintoimintojen ylläpitämiseksi.
+                  </p>
+                  <p>
+                    Rakentamisessa tulee ottaa huomioon sen vaikutukset
+                    ympäristöön ja vakaasti harkiten punnita hyödyt ja
+                    haitat. Ympäristöä edistävä rakentaminen on
+                    priorisoitava ensisijaisesti.
+                  </p>
+                </div>
+                <button class="lisaa-nappi">Lue lisää...</button>
+              </div>
+            </article>
+
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+  </body>
 </html>

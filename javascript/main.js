@@ -8,28 +8,11 @@
 // SIVUSTON JUURI
 // ==========================================================
 
-// Selvitetään automaattisesti sivuston juurikansio.
-//
-// GitHub Pages:
-// https://juhsilla1337.github.io/juhanisillanpaa/
-//
-// Live Preview:
-// http://127.0.0.1:3000/
-//
-// Oma domain:
-// https://juhanisillanpaa.fi/
-//
-// Näin sama JavaScript toimii kaikissa ympäristöissä.
-
 const SITE_ROOT = (() => {
   const path = window.location.pathname;
-
-  // Jos ollaan GitHub Pagesissa /juhanisillanpaa/
   if (path.includes("/juhanisillanpaa/")) {
     return "/juhanisillanpaa/";
   }
-
-  // Live Preview / oma domain
   return "/";
 })();
 
@@ -40,12 +23,10 @@ const SITE_ROOT = (() => {
 
 async function loadComponent(selector, file) {
   const el = document.querySelector(selector);
-
   if (!el) return;
 
   try {
     const url = SITE_ROOT + file;
-
     const res = await fetch(url);
 
     if (!res.ok) {
@@ -53,26 +34,13 @@ async function loadComponent(selector, file) {
     }
 
     const html = await res.text();
-
     el.innerHTML = html;
 
-    // Muutetaan komponentin suhteelliset polut
-    // toimimaan sekä Live Previewssa että GitHub Pagesissa.
-
     el.querySelectorAll("[href], [src]").forEach((element) => {
-
-      const attribute =
-        element.hasAttribute("href")
-          ? "href"
-          : "src";
-
-      const value =
-        element.getAttribute(attribute);
+      const attribute = element.hasAttribute("href") ? "href" : "src";
+      const value = element.getAttribute(attribute);
 
       if (!value) return;
-
-      // Älä koske ulkoisiin linkkeihin,
-      // sähköpostiin, ankkureihin tai jo absoluuttisiin polkuihin.
 
       if (
         value.startsWith("http://") ||
@@ -86,19 +54,11 @@ async function loadComponent(selector, file) {
         return;
       }
 
-      element.setAttribute(
-        attribute,
-        SITE_ROOT + value
-      );
+      element.setAttribute(attribute, SITE_ROOT + value);
     });
 
   } catch (err) {
-
-    console.error(
-      `Komponentin lataus epäonnistui (${file}):`,
-      err
-    );
-
+    console.error(`Komponentin lataus epäonnistui (${file}):`, err);
   }
 }
 
@@ -109,24 +69,14 @@ async function loadComponent(selector, file) {
 
 async function initComponents() {
 
-  await loadComponent(
-    "#header-placeholder",
-    "components/header.html"
-  );
-
-  await loadComponent(
-    "#hero-placeholder",
-    "components/hero.html"
-  );
-
-  await loadComponent(
-    "#footer-placeholder",
-    "components/footer.html"
-  );
+  await loadComponent("#header-placeholder", "components/header.html");
+  await loadComponent("#hero-placeholder",   "components/hero.html");
+  await loadComponent("#footer-placeholder", "components/footer.html");
 
   initNav();
   initHero();
   initYear();
+  initLisaaNapit();
 }
 
 
@@ -136,101 +86,48 @@ async function initComponents() {
 
 function initNav() {
 
-  const btn = document.querySelector(".nav-toggle");
+  const btn   = document.querySelector(".nav-toggle");
   const links = document.getElementById("nav-links");
 
   if (!btn || !links) return;
 
-
   // ── Hampurilaisvalikko ──────────────────────────────────
-
   btn.addEventListener("click", () => {
-
     const open = links.classList.toggle("open");
-
-    btn.setAttribute(
-      "aria-expanded",
-      open
-    );
-
+    btn.setAttribute("aria-expanded", open);
   });
-
 
   // ── Sulje valikko linkkiä klikattaessa ──────────────────
-
   links.querySelectorAll("a").forEach((a) => {
-
     a.addEventListener("click", () => {
-
       links.classList.remove("open");
-
-      btn.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
+      btn.setAttribute("aria-expanded", "false");
     });
-
   });
-
 
   // ── Sulje valikko navin ulkopuolelta ─────────────────────
-
-  const siteNav =
-    document.getElementById("site-nav");
-
+  const siteNav = document.getElementById("site-nav");
   if (siteNav) {
-
     document.addEventListener("click", (e) => {
-
       if (!siteNav.contains(e.target)) {
-
         links.classList.remove("open");
-
-        btn.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
+        btn.setAttribute("aria-expanded", "false");
       }
-
     });
-
   }
 
-
   // ── Aktiivinen sivu ─────────────────────────────────────
-
   const current =
-    location.pathname
-      .split("/")
-      .filter(Boolean)
-      .pop() || "index.html";
-
+    location.pathname.split("/").filter(Boolean).pop() || "index.html";
 
   links.querySelectorAll("a").forEach((a) => {
-
-    const href =
-      a.getAttribute("href");
-
+    const href = a.getAttribute("href");
     if (!href) return;
-
-
-    const linkPage =
-      href
-        .split("/")
-        .filter(Boolean)
-        .pop();
-
-
+    const linkPage = href.split("/").filter(Boolean).pop();
     if (linkPage === current) {
-
       a.classList.add("active");
-
     }
-
   });
-
 }
 
 
@@ -239,23 +136,27 @@ function initNav() {
 // ==========================================================
 
 function initHero() {
-
-  const slides =
-    document.querySelectorAll(".hero-slide");
-
+  const slides = document.querySelectorAll(".hero-slide");
   if (!slides.length) return;
 
-
-  // Näytä satunnaisesti yksi hero-slide
-
-  const random =
-    Math.floor(
-      Math.random() * slides.length
-    );
-
-
+  const random = Math.floor(Math.random() * slides.length);
   slides[random].style.display = "flex";
+}
 
+
+// ==========================================================
+// LUE LISÄÄ -NAPIT
+// ==========================================================
+
+function initLisaaNapit() {
+  document.querySelectorAll(".lisaa-nappi").forEach((nappi) => {
+    nappi.addEventListener("click", () => {
+      const teksti = nappi.previousElementSibling;
+      if (!teksti) return;
+      const piilotettu = teksti.classList.toggle("lisaa-teksti--piilotettu");
+      nappi.textContent = piilotettu ? "Lue lisää..." : "Näytä vähemmän";
+    });
+  });
 }
 
 
@@ -264,16 +165,9 @@ function initHero() {
 // ==========================================================
 
 function initYear() {
-
-  const el =
-    document.getElementById("current-year");
-
+  const el = document.getElementById("current-year");
   if (!el) return;
-
-
-  el.textContent =
-    new Date().getFullYear();
-
+  el.textContent = new Date().getFullYear();
 }
 
 
