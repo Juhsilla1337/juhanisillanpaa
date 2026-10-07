@@ -737,11 +737,14 @@ blockquote p {
     transition: none;
   }
 }
-
 /* ==========================================================
    LUE LISÄÄ -TOIMINTO
    Lisää style.css:n loppuun
    ========================================================== */
+
+.lisaa-teksti {
+  /* näkyy oletuksena */
+}
 
 .lisaa-teksti--piilotettu {
   display: none;
